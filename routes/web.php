@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CourseCatalogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,8 +23,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/', function () {
-        return view('principal');
-    })->name('home');
+    Route::get('/', CourseCatalogController::class)->name('home');
 
+
+});
+
+Route::fallback(function () {
+    return redirect()->route('home');
 });

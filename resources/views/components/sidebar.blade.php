@@ -7,7 +7,7 @@
     <div class="side-inner">
 
       <div class="logo">
-        <span>C</span>
+        <span>@user_initials</span>
       </div>
 
       <div class="nav-menu">
@@ -23,14 +23,14 @@
           <li {{ (Route::current()->getName() == 'profile.show') ? 'class=active' : '' }}><a href="{{ route('profile.show') }}">Perfil</a></li>
           <li>
               <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+                  @csrf
 
-                    <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </a>
-                </form>
+                  <a href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                  this.closest('form').submit();">
+                      {{ __('Log Out') }}
+                  </a>
+              </form>
             </li>
         </ul>
       </div>
