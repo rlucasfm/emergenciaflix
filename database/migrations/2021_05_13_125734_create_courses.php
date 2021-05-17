@@ -22,6 +22,7 @@ class CreateCourses extends Migration
             $table->string('link');
             $table->string('img')->nullable();
             $table->string('sell_link')->nullable();
+            $table->tinyInteger('modules')->default(1);
             $table->timestamps();
         });
     }

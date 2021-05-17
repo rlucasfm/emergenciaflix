@@ -15,13 +15,12 @@ class CreateUserLesson extends Migration
     {
         Schema::create('user_lesson', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->integer('user_id');
-            $table->integer('course_id');
             $table->boolean('completed');
+            $table->foreignid('user_id')->reference('id')->on('users');
+            $table->foreignid('course_id')->reference('id')->on('courses');
+            $table->tinyInteger('module')->default(1);
 
-            $table->foreign('user_id')->reference('id')->on('users');
-            $table->foreign('course_id')->reference('id')->on('courses');
+            $table->timestamps();
         });
     }
 

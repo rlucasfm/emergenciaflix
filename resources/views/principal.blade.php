@@ -2,6 +2,10 @@
 
 @section('title', 'EmergênciaFlix')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+@endsection
+
 @section('content')
 <main>
 
