@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseCatalogController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\PlayerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +28,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::get('/', CourseCatalogController::class)->name('home');
 
+    Route::get('course/{id}', CourseController::class)->name('course');
 
+    Route::get('lesson/{id}', PlayerController::class)->name('player');
 });
 
 Route::fallback(function () {

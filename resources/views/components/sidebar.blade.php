@@ -13,12 +13,9 @@
       <div class="nav-menu">
         <ul>
           <li {{ (Route::current()->getName() == 'home') ? 'class=active' : '' }}><a href="{{ route('home') }}">Home</a></li>
-          <li><a href="#">APH 200 Horas</a></li>
-          <li><a href="#">APH 80 Horas</a></li>
-          <li><a href="#">Injetáveis</a></li>
-          <li><a href="#">Aeromédico</a></li>
-          <li><a href="#">Suporte Básico</a></li>
-          <li><a href="#">Suporte Avançado</a></li>
+          @foreach ($courses_available as $c)
+              <li><a href="{{ route($c['link'], ['id' => $c['id']]) }}">{{ $c['name'] }}</a></li>
+          @endforeach
           <hr>
           <li {{ (Route::current()->getName() == 'profile.show') ? 'class=active' : '' }}><a href="{{ route('profile.show') }}">Perfil</a></li>
           <li>

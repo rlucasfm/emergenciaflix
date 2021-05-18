@@ -15,8 +15,10 @@ class CreateUserCourse extends Migration
     {
         Schema::create('user_course', function (Blueprint $table) {
             $table->id();
-            $table->foreignid('user_id')->reference('id')->on('users');
-            $table->foreignid('course_id')->reference('id')->on('courses');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('course_id')->references('id')->on('courses');
             $table->tinyInteger('complete_lessons')->default(0);
             $table->boolean('completed');
             $table->date('due_date')->nullable();

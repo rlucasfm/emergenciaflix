@@ -48,7 +48,7 @@
                                     <?php $counter = 0; ?>
                             @endif
                             <div class="col-2 float-left blur ">
-                                <a href="{{ route($c['link']) }}">
+                                <a href="{{ route($c['link'], ['id' => $c['id']]) }}">
                                     <img class="img-responsive " width="90%"  src="{{ $c['img'] }}" style="border-radius: 20px;">
                                 </a>
                             </div>
@@ -74,7 +74,7 @@
                             <?php $counter_mobile = 0; ?>
                         @endif
                         <div class="col-4 float-left blur ">
-                            <a href="{{ route($c['link']) }}">
+                            <a href="{{ route($c['link'], ['id' => $c['id']]) }}">
                                 <img class="img-responsive " width="90%"  src="{{ $c['img'] }}" style="border-radius: 5px;">
                             </a>
                         </div>
