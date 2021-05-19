@@ -113,7 +113,13 @@
                                     <div class="card-header" id="headingOne{{$i}}" style="background-color: rgb(82 82 82); border-bottom: 1px solid rgb(82 82 82);">
                                         <h3 class="mb-0">
                                             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne{{$i}}" aria-expanded="true" aria-controls="collapseOne{{$i}}">
-                                                <h3 style="color: white; font-weight: bolder; font-size: 5vh; font-family: Open Sans" class="text-center">MÓDULO {{$i}}</h3>
+                                                <h3 style="color: white; font-weight: bolder; font-size: 5vh; font-family: Open Sans" class="text-center">
+                                                    @if(isset($modules[$i-1]['name']))
+                                                        {{ $modules[$i-1]['name'] }}
+                                                    @else
+                                                    {{ "MÓDULO $i" }}
+                                                    @endif
+                                                </h3>
                                                 {{-- <img src="{{ asset('images/modulo1.png') }}" width="100%" /> --}}
                                             </button>
                                         </h3>
@@ -160,7 +166,13 @@
                                     <div class="card-header" id="headingOne{{$j}}" style="background-color: rgb(82 82 82); border-bottom: 1px solid rgb(82 82 82);">
                                         <h3 class="mb-0">
                                             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne{{$j}}" aria-expanded="true" aria-controls="collapseOne{{$j}}">
-                                                <h3 style="color: white; font-weight: bolder; font-size: 5vh; font-family: Open Sans" class="text-center">MÓDULO {{$j}}</h3>
+                                                <h3 style="color: white; font-weight: bolder; font-size: 5vh; font-family: Open Sans" class="text-center">
+                                                    @if(isset($modules[$j-1]['name']))
+                                                        {{ $modules[$j-1]['name'] }}
+                                                    @else
+                                                    {{ "MÓDULO $j" }}
+                                                    @endif
+                                                </h3>
                                                 {{-- <img src="{{ asset('images/modulo1.png') }}" width="100%" /> --}}
                                             </button>
                                         </h3>

@@ -14,7 +14,11 @@ class PlayerController extends Controller
     public function __invoke(Request $request, $id)
     {
         $user_id = Auth::id();
-        $lesson = Lesson::find($id)->toArray();
+        try {
+            $lesson = Lesson::find($id)->toArray();
+        } catch (\Throwable $th) {
+            return back()->with('error', 'Aula não encontrada.');
+        }
 
         $courses = UserCourse::where('course_id', $lesson['course_id'])->get();
         if(count($courses) == 0)
@@ -46,10 +50,18 @@ class PlayerController extends Controller
             {
                 $next = '#';
             } else {
-                $next = Lesson::where('course_id', $lesson['course_id'])->where('course_module', $mod_now+1)->where('module_order', 1)->first()->getAttribute('id');
+                $next = Lesson::where('course_id', $lesson['course_id'])
+                                ->where('course_module', $mod_now+1)
+                                ->where('module_order', 1)
+                                ->first()
+                                ->getAttribute('id');
             }
         } else {
-            $next = $less_now+1;
+            $next = Lesson::where('course_id', $lesson['course_id'])
+                                ->where('course_module', $mod_now)
+                                ->where('module_order', $less_now+1)
+                                ->first()
+                                ->getAttribute('id');
         }
 
         // PREVIOUS
@@ -60,10 +72,18 @@ class PlayerController extends Controller
                 $previous = '#';
             } else {
                 $prev_last_lesson = self::find_last_lesson($lesson['course_id'], intval($lesson['course_module'])-1);
-                $previous = Lesson::where('course_id', $lesson['course_id'])->where('course_module', $mod_now-1)->where('module_order', $prev_last_lesson)->first()->getAttribute('id');
+                $previous = Lesson::where('course_id', $lesson['course_id'])
+                                    ->where('course_module', $mod_now-1)
+                                    ->where('module_order', $prev_last_lesson)
+                                    ->first()
+                                    ->getAttribute('id');
             }
         } else {
-            $previous = $less_now-1;
+            $previous = Lesson::where('course_id', $lesson['course_id'])
+                                ->where('course_module', $mod_now)
+                                ->where('module_order', $less_now-1)
+                                ->first()
+                                ->getAttribute('id');
         }
 
         $previous = ($previous != '#') ? route('player', ['id' => $previous]) : $previous;

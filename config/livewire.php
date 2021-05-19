@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' =>  env('APP_URL', 'http://projetos-php/emergenciaflix/public'),
+    'asset_url' => '/emergenciaflix/public',
 
     /*
     |--------------------------------------------------------------------------
