@@ -68,7 +68,7 @@
                         <h2 style="margin-top: 25px;">Suas Anotações:</h2>
                         <br />
 
-                        <p class="text-justify" style="color: #fff;">
+                        <p class="text-justify annotation-paragraph" style="color: #fff;">
                             {{$user_lesson['annotations']}}
                         </p>
                     </div>
@@ -117,7 +117,7 @@
                         <h2 style="margin-top: 25px;">Suas Anotações:</h2>
                         <br />
 
-                        <p class="text-justify" style="color: #fff;">
+                        <p class="text-justify annotation-paragraph" style="color: #fff;" >
                             {{$user_lesson['annotations']}}
                         </p>
                     </div>
@@ -161,6 +161,7 @@
 @section('js')
 <script>
     $('#saveAnnotation').click(function () {
+        $(".annotation-paragraph").html($('#annotation-text').val());
         $.ajax({
             url: '{{ route('api-annotation') }}',
             method: 'POST',
