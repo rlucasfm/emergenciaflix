@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use App\Models\UserCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,15 +12,7 @@ class CourseCatalogController extends Controller
     {
         $data = [];
 
-        $user_id = Auth::id();
-        // $user_courses = UserCourse::where('user_id', $user_id)->get();
-        $courses_aval = Course::join('user_course', 'courses.id', '=', 'user_course.course_id')
-        ->select('courses.id', 'courses.name', 'courses.description', 'courses.link', 'courses.img', 'courses.sell_link', 'user_course.complete_lessons', 'user_course.completed')
-        ->where('user_course.user_id', '=', $user_id)
-        ->get()
-        ->toArray();
-
-        $data['courses'] = $courses_aval;
+        $data['courses'] = Course::get_avaliable(Auth::id());
 
         return view('principal', $data);
     }
