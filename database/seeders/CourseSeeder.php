@@ -33,7 +33,7 @@ class CourseSeeder extends Seeder
                 'qnt_hours' => 30,
                 'link' => '/',
                 'img' => 'images/cover-inje.jpg',
-                'modules' => 3
+                'modules' => 5
             ],
             [
                 'id' => 43052,

@@ -613,7 +613,6 @@ class APHLessonSeeder extends Seeder
                 'lesson_videoembed' => 'https://www.youtube.com/embed/XfafU5TaN1w',
                 'lesson_content' => ''
             ],
-
             [
                 'course_id' => 44374,
                 'course_module' => 5,
@@ -658,6 +657,96 @@ class APHLessonSeeder extends Seeder
                     </center>
                 </div>
                 ',
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 6,
+                'module_order' => 1,
+                'lesson_icon' => 'far fa-play-circle',
+                'lesson_title' => 'VIDEO ZERO - BOAS VINDAS AO MÓDULO SBV E DEA 2020',
+                'lesson_description' => 'VIDEO ZERO - BOAS VINDAS AO MÓDULO SBV E DEA 2020',
+                'lesson_videoembed' => 'https://www.youtube.com/embed/eG7ZHpUhnbg',
+                'lesson_content' => ''
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 6,
+                'module_order' => 2,
+                'lesson_icon' => 'far fa-play-circle',
+                'lesson_title' => 'AULA 1 - INTRODUÇÃO E CONCEITOS',
+                'lesson_description' => 'AULA 1 - INTRODUÇÃO E CONCEITOS',
+                'lesson_videoembed' => 'https://www.youtube.com/embed/Nb_CFBBwD-A',
+                'lesson_content' => ''
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 6,
+                'module_order' => 3,
+                'lesson_icon' => 'far fa-play-circle',
+                'lesson_title' => 'AULA 2 - ABORDAGEM DO ALGORITIMO DE PCR 2020',
+                'lesson_description' => 'AULA 2 - ABORDAGEM DO ALGORITIMO DE PCR 2020',
+                'lesson_videoembed' => 'https://www.youtube.com/embed/7ii4sFU12AU',
+                'lesson_content' => ''
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 6,
+                'module_order' => 4,
+                'lesson_icon' => 'far fa-play-circle',
+                'lesson_title' => 'AULA 3 - REVISÃO GERAL E A ABORDAGEM NO INTRA HOSPITALAR P3',
+                'lesson_description' => 'AULA 3 - REVISÃO GERAL E A ABORDAGEM NO INTRA HOSPITALAR P3',
+                'lesson_videoembed' => 'https://www.youtube.com/embed/Nkw24msOLfY',
+                'lesson_content' => ''
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 6,
+                'module_order' => 5,
+                'lesson_icon' => 'far fa-play-circle',
+                'lesson_title' => 'AULA 4 - DEA DESFIBRILADOR EXTERNO AUTOMÁTICO CUIDADOS GERAIS',
+                'lesson_description' => 'AULA 4 - DEA DESFIBRILADOR EXTERNO AUTOMÁTICO CUIDADOS GERAIS',
+                'lesson_videoembed' => 'https://www.youtube.com/embed/JKTkUiTWLNU',
+                'lesson_content' => ''
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 6,
+                'module_order' => 6,
+                'lesson_icon' => 'far fa-play-circle',
+                'lesson_title' => 'AULA 5 - REVISÃO SUPORTE AVANÇADO',
+                'lesson_description' => 'AULA 5 - REVISÃO SUPORTE AVANÇADO',
+                'lesson_videoembed' => 'https://www.youtube.com/embed/2J0X7JWYE88',
+                'lesson_content' => ''
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 6,
+                'module_order' => 7,
+                'lesson_icon' => 'far fa-play-circle',
+                'lesson_title' => 'AULA 6 - ENGASGO OBSTRUÇÃO DE VIA AÉREA POR CORPO ESTRANHO',
+                'lesson_description' => 'AULA 6 - ENGASGO OBSTRUÇÃO DE VIA AÉREA POR CORPO ESTRANHO',
+                'lesson_videoembed' => 'https://www.youtube.com/embed/O4aEVG1hUN0',
+                'lesson_content' => ''
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 7,
+                'module_order' => 1,
+                'lesson_icon' => 'far fa-file-alt',
+                'lesson_title' => 'Certificado',
+                'lesson_description' => 'Certificado',
+                // 'lesson_videoembed' => '',
+                'lesson_content' => 'Certificado'
+            ],
+            [
+                'course_id' => 44374,
+                'course_module' => 7,
+                'module_order' => 2,
+                'lesson_icon' => 'far fa-file-alt',
+                'lesson_title' => 'Carteirinha',
+                'lesson_description' => 'Carteirinha',
+                // 'lesson_videoembed' => '',
+                'lesson_content' => 'Carteirinha'
             ],
         ];
 

@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\CourseModule;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+
 
 class SBVModulesSeeder extends Seeder
 {
@@ -43,7 +44,7 @@ class SBVModulesSeeder extends Seeder
         ];
 
         foreach ($data as $d) {
-            DB::table('course_modules')->insert($d);
+            CourseModule::create($d);
         }
     }
 }
