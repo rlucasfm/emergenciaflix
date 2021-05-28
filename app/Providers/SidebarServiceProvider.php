@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Models\Course;
+use Illuminate\Support\Facades\Auth;
 
 class SidebarServiceProvider extends ServiceProvider
 {
@@ -26,7 +27,8 @@ class SidebarServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('components.sidebar', function($view) {
-            $courses_aval = Course::get_avaliable();
+            $user_id = Auth::id();
+            $courses_aval = Course::get_available($user_id);
             $view->with('courses_available', $courses_aval);
         });
     }

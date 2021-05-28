@@ -68,7 +68,7 @@
                         <h2 style="margin-top: 25px;">Suas Anotações:</h2>
                         <br />
 
-                        <p class="text-justify annotation-paragraph" style="color: #fff;">
+                        <p class="text-justify annotation-paragraph" style="color: #fff; white-space: pre-wrap;">
                             {{$user_lesson['annotations']}}
                         </p>
                     </div>
@@ -117,7 +117,7 @@
                         <h2 style="margin-top: 25px;">Suas Anotações:</h2>
                         <br />
 
-                        <p class="text-justify annotation-paragraph" style="color: #fff;" >
+                        <p class="text-justify annotation-paragraph" style="color: #fff; white-space: pre-wrap;" >
                             {{$user_lesson['annotations']}}
                         </p>
                     </div>
