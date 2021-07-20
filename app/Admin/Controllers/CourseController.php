@@ -77,10 +77,10 @@ class CourseController extends AdminController
 
         $form->text('name', __('Name'));
         $form->text('description', __('Description'));
-        $form->switch('qnt_lessons', __('Qnt lessons'));
+        $form->number('qnt_lessons', __('Qnt lessons'));
         $form->number('qnt_hours', __('Qnt hours'));
-        $form->url('link', __('Link'));
-        $form->image('img', __('Img'));
+        $form->text('link', __('Link'));
+        $form->text('img', __('Img'));
         $form->text('sell_link', __('Sell link'));
         $form->switch('modules', __('Modules'))->default(1);
 
