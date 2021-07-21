@@ -63,38 +63,38 @@
 
         <!---MOBILE-->
 
-        <div id="recipeCarousel2" class="carousel slide w-100 d-lg-none w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item row no-gutters active">
-                    <?php $counter_mobile = 0; ?>
-                    @foreach ($courses as $c)
-                        @if ($counter_mobile == 3)
+            <div id="recipeCarousel2" class="carousel slide w-100 d-lg-none w-100" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item row no-gutters active">
+                        <?php $counter_mobile = 0; ?>
+                        @foreach ($courses as $c)
+                            @if ($counter_mobile == 3)
+                                </div>
+                                <div class="carousel-item row no-gutters">
+                                <?php $counter_mobile = 0; ?>
+                            @endif
+                            <div class="col-4 float-left blur ">
+                                <a href="{{ route($c['link'], ['id' => $c['id']]) }}">
+                                    <img class="img-responsive " width="90%"  src="{{ $c['img'] }}" style="border-radius: 5px;">
+                                </a>
                             </div>
-                            <div class="carousel-item row no-gutters">
-                            <?php $counter_mobile = 0; ?>
-                        @endif
-                        <div class="col-4 float-left blur ">
-                            <a href="{{ route($c['link'], ['id' => $c['id']]) }}">
-                                <img class="img-responsive " width="90%"  src="{{ $c['img'] }}" style="border-radius: 5px;">
-                            </a>
-                        </div>
-                        @if ($loop->last)
-                            </div>
-                        @endif
-                        <?php $counter_mobile++; ?>
-                    @endforeach
+                            @if ($loop->last)
+                                </div>
+                            @endif
+                            <?php $counter_mobile++; ?>
+                        @endforeach
 
+                </div>
             </div>
-        </div>
 
-        <!--MOBILE FIM-->
+            <!--MOBILE FIM-->
 
-        <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                </div>
             </div>
-        </div>
 
-      </div>
+        </div>
     </div>
 
 </main>
